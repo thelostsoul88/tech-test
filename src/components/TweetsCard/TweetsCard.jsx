@@ -11,11 +11,10 @@ export const TweetsCard = () => {
             <div className={css.tweetImg}></div>
             <div className={css.tweetLine}></div>
           </div>
-
-          <p className={css.tweetText}>Tweets: </p>
-          <p className={css.tweetText}>Followers: </p>
+          <p className={css.tweetTxt}>TWEETS</p>
+          <p className={css.tweetTxt}>FOLLOWERS</p>
           <button className={css.tweetBtn}>
-            <span className={css.tweetBtnText}>Follow</span>
+            <span className={css.tweetBtnTxt}>Follow</span>
           </button>
         </li>
       </ul>

@@ -5,7 +5,7 @@ export const Tweets = () => {
   return (
     <>
       <Link to="/">
-        <button className="font-light font-mono">Home</button>
+        <button className="ml-10 font-light font-mono">Home</button>
       </Link>
       <div>
         <TweetsCard />
