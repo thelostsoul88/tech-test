@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { TweetsCard } from "../components/TweetsCard/TweetsCard";
 import { useGetUsersQuery } from "../redux/usersApi";
-import { BsArrowLeft } from "react-icons/BS";
+import { BsArrowLeft } from "react-icons/all";
 
 export const Tweets = () => {
   const { data = [] } = useGetUsersQuery();
