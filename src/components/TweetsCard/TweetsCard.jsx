@@ -11,13 +11,13 @@ export const TweetsCard = ({ users }) => {
   const { id, user, tweets, followers, avatar } = users;
 
   const handleFollow = async (id) => {
-    const subscribed = (users) => ({
+    const followed = (users) => ({
       ...users,
       followers: users.followers + 1,
     });
-    const body = subscribed(users);
+    const body = followed(users);
     await putUsers({ body, id });
-    dispatch(addFollower(followersid));
+    dispatch(addFollower(id));
     setIsFollowing(true);
   };
 
@@ -49,13 +49,13 @@ export const TweetsCard = ({ users }) => {
           {String(followers).replace(/\B(?=(\d{3})+(?!\d))/g, ",")} Followers
         </p>
         {!isFollowing ? (
-          <button className={css.followBtn} onClick={() => handleSubscribe(id)}>
+          <button className={css.followBtn} onClick={() => handleFollow(id)}>
             Follow
           </button>
         ) : (
           <button
             className={css.followingBtn}
-            onClick={() => handleUnsubscribe(id)}
+            onClick={() => handleUnFollow(id)}
           >
             Following
           </button>
