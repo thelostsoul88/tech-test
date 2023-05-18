@@ -15,7 +15,7 @@ import { followersSlice } from "./slice";
 import persistReducer from "redux-persist/es/persistReducer";
 
 const persistConfig = {
-  key: "followers",
+  key: "users",
   storage,
   whitelist: ["followers"],
 };

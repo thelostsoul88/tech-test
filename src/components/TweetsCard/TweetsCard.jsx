@@ -10,7 +10,7 @@ export const TweetsCard = ({ users }) => {
   const dispatch = useDispatch();
   const { id, user, tweets, followers, avatar } = users;
 
-  const handleSubscribe = async (followersid) => {
+  const handleFollow = async (id) => {
     const subscribed = (users) => ({
       ...users,
       followers: users.followers + 1,
@@ -21,14 +21,14 @@ export const TweetsCard = ({ users }) => {
     setIsFollowing(true);
   };
 
-  const handleUnsubscribe = async (followersid) => {
-    const unsubscribed = (users) => ({
+  const handleUnFollow = async (id) => {
+    const unFollowed = (users) => ({
       ...users,
       followers: users.followers - 1,
     });
-    const body = unsubscribed(users);
+    const body = unFollowed(users);
     await putUsers({ body, id });
-    dispatch(removeFollower(followersid));
+    dispatch(removeFollower(id));
     setIsFollowing(false);
   };
 
