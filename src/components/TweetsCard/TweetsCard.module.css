@@ -1,24 +1,13 @@
-.tweetContainer {
-  margin: 0 auto;
-}
-.tweetList {
-  font-family: "Montserrat";
-  font-style: normal;
-  margin: 0 auto;
-  margin: 50px 435px 50px 435px;
-}
 .tweetCard {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 500;
-  box-sizing: border-box;
-  margin: 0 auto;
-  text-align: center;
-  padding: 28px 36px 36px 36px;
-  background-color: #5736a3;
   width: 380px;
   height: 460px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
   border-radius: 20px;
+  background-color: #5736a3;
+  position: relative;
 }
 .tweetBgLogo {
   background-image: url(/images/logo.png);
@@ -27,8 +16,8 @@
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
-  left: -16px;
-  top: -8px;
+  left: 20px;
+  top: 20px;
 }
 
 .tweetBgImg {
@@ -37,7 +26,7 @@
   height: 160px;
   background-repeat: no-repeat;
   background-size: contain;
-  position: relative;
+  background-position: top 8px left 0;
 }
 .BothObj {
   display: inline-block;
@@ -47,15 +36,30 @@
   z-index: 2;
   margin-bottom: 26px;
 }
-.tweetImg {
-  display: inline-block;
-  background-image: url(/images/avatar.png);
-  width: 80px;
-  height: 80px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: relative;
+.tweetRounded {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -15%);
+  width: 100px;
+  height: 100px;
+  border: 8px solid #ebd8ff;
+  border-radius: 50%;
+  overflow: hidden;
   z-index: 2;
+  box-shadow: inset 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06),
+    inset 0px -1.71846px 3.43693px #ae7be3, inset 0px 3.43693px 2.5777px #fbf8ff;
+  background-image: linear-gradient(
+    114.99deg,
+    #471ca9 -0.99%,
+    #5736a3 54.28%,
+    #4b2a99 78.99%
+  );
+}
+.tweetImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .tweetLine {
   position: absolute;
@@ -68,39 +72,50 @@
   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06),
     inset 0px -1.71846px 3.43693px #ae7be3, inset 0px 3.43693px 2.5777px #fbf8ff;
 }
-.tweetTxt {
-  font-family: "Montserrat";
-  font-style: normal;
+.tweetsTxt {
   color: #ebd8ff;
-  font-weight: 500;
   margin-bottom: 16px;
+  text-transform: uppercase;
 }
 
-.tweetNumbers {
-  font-family: "Montserrat";
-  font-style: normal;
-}
-.tweetBtn {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 600;
-  color: #373737;
-  background-color: #ebd8ff;
-  padding: 14px 28px;
-  border-radius: 10px;
-  width: 196px;
-  height: 50px;
-  box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
-  align-items: center;
-  margin-top: 10px;
+.followersTxt {
+  color: #ebd8ff;
+  margin-bottom: 26px;
+  text-transform: uppercase;
 }
 
-.tweetBtnTxt {
-  font-family: "Montserrat";
-  font-style: normal;
+.followBtn {
   font-weight: 600;
   font-size: 18px;
-  line-height: 0.8;
   text-transform: uppercase;
+  text-align: center;
+  width: 196px;
+  height: 50px;
+  padding: 14px 0;
+  margin-bottom: 36px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  line-height: 1.22;
+  background: #ebd8ff;
   color: #373737;
+  box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
+}
+
+.followingBtn {
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-align: center;
+  width: 196px;
+  height: 50px;
+  padding: 14px 0;
+  margin-bottom: 36px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  line-height: 1.22;
+  background: #5cd3a8;
+  color: #373737;
+  box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
 }

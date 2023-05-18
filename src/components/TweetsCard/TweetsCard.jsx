@@ -1,23 +1,66 @@
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import css from "./TweetsCard.module.css";
-export const TweetsCard = () => {
+import { usePutUsersMutation } from "../../redux/usersApi";
+import { addFollower, removeFollower } from "../../redux/slice";
+
+export const TweetsCard = ({ users }) => {
+  const [isFollowing, setIsFollowing] = useState(false);
+  const [putUsers] = usePutUsersMutation();
+  const dispatch = useDispatch();
+  const { id, user, tweets, followers, avatar } = users;
+
+  const handleSubscribe = async (followersid) => {
+    const subscribed = (users) => ({
+      ...users,
+      followers: users.followers + 1,
+    });
+    const body = subscribed(users);
+    await putUsers({ body, id });
+    dispatch(addFollower(followersid));
+    setIsFollowing(true);
+  };
+
+  const handleUnsubscribe = async (followersid) => {
+    const unsubscribed = (users) => ({
+      ...users,
+      followers: users.followers - 1,
+    });
+    const body = unsubscribed(users);
+    await putUsers({ body, id });
+    dispatch(removeFollower(followersid));
+    setIsFollowing(false);
+  };
+
   return (
-    <div className={css.tweetContainer}>
-      <ul className={css.tweetList}>
-        <li className={css.tweetCard}>
-          <div className={css.tweetBgImg}>
-            <div className={css.tweetBgLogo}></div>
+    users && (
+      <li className={css.tweetCard} key={id}>
+        <div className={css.tweetBgImg}>
+          <div className={css.tweetBgLogo}></div>
+        </div>
+        <div className={css.BothObj}>
+          <div className={css.tweetRounded}>
+            <img className={css.tweetImg} src={avatar} alt={user}></img>
           </div>
-          <div className={css.BothObj}>
-            <div className={css.tweetImg}></div>
-            <div className={css.tweetLine}></div>
-          </div>
-          <p className={css.tweetTxt}>TWEETS</p>
-          <p className={css.tweetTxt}>FOLLOWERS</p>
-          <button className={css.tweetBtn}>
-            <span className={css.tweetBtnTxt}>Follow</span>
+          <div className={css.tweetLine}></div>
+        </div>
+        <p className={css.tweetsTxt}>{tweets} Tweets</p>
+        <p className={css.followersTxt}>
+          {String(followers).replace(/\B(?=(\d{3})+(?!\d))/g, ",")} Followers
+        </p>
+        {!isFollowing ? (
+          <button className={css.followBtn} onClick={() => handleSubscribe(id)}>
+            Follow
           </button>
-        </li>
-      </ul>
-    </div>
+        ) : (
+          <button
+            className={css.followingBtn}
+            onClick={() => handleUnsubscribe(id)}
+          >
+            Following
+          </button>
+        )}
+      </li>
+    )
   );
 };
