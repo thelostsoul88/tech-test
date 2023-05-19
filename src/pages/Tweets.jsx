@@ -16,11 +16,13 @@ export const Tweets = () => {
         </button>
       </Link>
       <div className="mb-10">
-        <ul className="flex justify-center flex-wrap gap-12">
-          {data.map((users) => (
-            <TweetsCard key={users.id} users={users} />
-          ))}
-        </ul>
+        {data && (
+          <ul className="flex justify-center flex-wrap gap-12">
+            {data.map((users) => (
+              <TweetsCard key={users.id} users={users} />
+            ))}
+          </ul>
+        )}
       </div>
     </>
   );
