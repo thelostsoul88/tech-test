@@ -9,8 +9,10 @@ export const followersSlice = createSlice({
     addFollower({ followers }, { payload }) {
       followers.push(payload);
     },
-    removeFollower({ followers }, { payload }) {
-      followers.pop(payload);
+    removeFollower(state, { payload }) {
+      state.followers = state.followers.filter(
+        (follower) => follower !== payload
+      );
     },
   },
 });
