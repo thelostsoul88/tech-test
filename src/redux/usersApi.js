@@ -8,7 +8,7 @@ export const usersApi = createApi({
   tagTypes: ["Users"],
   endpoints: (builder) => ({
     getUsers: builder.query({
-      query: () => "/users",
+      query: () => `/users`,
       providesTags: ["Users"],
     }),
     putUsers: builder.mutation({
