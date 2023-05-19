@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
   return (
@@ -6,9 +6,9 @@ export const Home = () => {
       <h1 className="text-4xl font-light font-mono">
         Welcome to our tweet app
       </h1>
-      <NavLink to="/tweets" className="mt-4">
+      <Link to="/tweets" className="mt-4">
         <button className="text-2xl font-light font-mono">Just Tweet</button>
-      </NavLink>
+      </Link>
     </div>
   );
 };
