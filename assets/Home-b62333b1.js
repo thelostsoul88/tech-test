@@ -1,0 +1,1 @@
+import{j as t,L as e}from"./index-c680670a.js";const o=()=>t.jsxs("div",{className:"flex flex-col items-center",children:[t.jsx("h1",{className:"text-4xl font-light font-mono",children:"Welcome to our tweet app"}),t.jsx(e,{to:"/tweets",className:"mt-4",children:t.jsx("button",{className:"text-2xl font-light font-mono",children:"Just Tweet"})})]});export{o as Home};
