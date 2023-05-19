@@ -10,6 +10,7 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+public
 *.local
 
 # Editor directories and files
@@ -17,10 +18,14 @@ dist-ssr
 !.vscode/extensions.json
 .idea
 .DS_Store
+.github
+
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
+*.cls
 *.sw?
 
+.config
 .buildt
