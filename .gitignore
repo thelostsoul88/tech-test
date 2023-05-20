@@ -8,9 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-dist
 dist-ssr
-public
 *.local
 
 # Editor directories and files
@@ -24,8 +22,6 @@ public
 *.ntvs*
 *.njsproj
 *.sln
-*.cls
 *.sw?
 
-.config
 .buildt

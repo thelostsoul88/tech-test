@@ -1,6 +1,6 @@
 import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
-import css from "./Loader.module.css";
+import "./Loader.css";
 export const Loader = () => {
   return (
     <Backdrop
@@ -8,13 +8,7 @@ export const Loader = () => {
       open={true}
     >
       <Box sx={{ display: "flex" }}>
-        <div className={css.loading}>
-          <div className={css.dot}></div>
-          <div className={css.dot}></div>
-          <div className={css.dot}></div>
-          <div className={css.dot}></div>
-          <div className={css.dot}></div>
-        </div>
+        <div className="spinner"></div>
       </Box>
     </Backdrop>
   );
