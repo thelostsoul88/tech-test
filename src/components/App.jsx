@@ -21,7 +21,7 @@ function App() {
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route path="/" element={<Home />} />
+            <Route index element={<Home />} />
             <Route path="tweets" element={<Tweets />} />
             <Route path="*" element={<Home />}></Route>
           </Route>
