@@ -2,9 +2,19 @@ import { Link } from "react-router-dom";
 import { TweetsCard } from "../components/TweetsCard/TweetsCard";
 import { useGetUsersQuery } from "../redux/usersApi";
 import { BsArrowLeft } from "react-icons/all";
+import { useState } from "react";
+
+const LIMIT = 3;
+const TOTAL_CARDS = 15;
 
 export const Tweets = () => {
-  const { data = [] } = useGetUsersQuery();
+  const [limit, setLimit] = useState(LIMIT);
+  const { data = [] } = useGetUsersQuery(limit);
+
+  const LoadMore = () => {
+    setLimit((prev) => prev + 3);
+  };
+
   return (
     <>
       <Link to="/" className="ml-10 fixed z-10">
@@ -22,6 +32,15 @@ export const Tweets = () => {
               <TweetsCard key={users.id} users={users} />
             ))}
           </ul>
+        )}
+      </div>
+      <div className="flex justify-center mb-4">
+        {data.length >= 15 ? (
+          <h2>Its all tweets</h2>
+        ) : (
+          <button className="" onClick={() => LoadMore()}>
+            Load More
+          </button>
         )}
       </div>
     </>
