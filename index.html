@@ -11,11 +11,20 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TWEETS</title>
-    <script type="module" crossorigin src="/tech-test/assets/index-dab062cd.js"></script>
+    <script type="module" crossorigin src="/tech-test/assets/index-0e4dd812.js"></script>
     <link rel="stylesheet" href="/tech-test/assets/index-e0d3a38f.css">
   </head>
   <body>
     <div id="root"></div>
     
+    <script>
+      (() => {
+        const redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
   </body>
 </html>
