@@ -81,3 +81,7 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.container {
+  min-width: 1280px;
+}
