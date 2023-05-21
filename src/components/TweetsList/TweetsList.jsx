@@ -41,7 +41,7 @@ export const TweetsList = () => {
   return (
     <>
       <div className="flex justify-end">
-        <div className="">
+        <div className="fixed z-10">
           <div className="wrapper">
             <div className="option">
               <input
