@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { usePutUsersMutation } from "../../redux/usersApi";
 import { addFollower, removeFollower } from "../../redux/slice";
+import { selectFollowers } from "../../redux/selectors";
 import css from "./TweetsCard.module.css";
 
 export const TweetsCard = ({
@@ -10,11 +11,11 @@ export const TweetsCard = ({
   const [isFollowing, setIsFollowing] = useState(false);
   const [putUsers] = usePutUsersMutation();
   const dispatch = useDispatch();
-  const selectFollowers = useSelector((state) => state.followers.followers);
+  const tweetsFollowers = useSelector(selectFollowers);
 
   useEffect(() => {
-    selectFollowers.includes(id) ? setIsFollowing(true) : setIsFollowing(false);
-  }, [id, selectFollowers]);
+    tweetsFollowers.includes(id) ? setIsFollowing(true) : setIsFollowing(false);
+  }, [id, tweetsFollowers]);
 
   const handleFollow = async (id) => {
     const followed = () => ({

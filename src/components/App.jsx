@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
 import { Layout } from "./Layout/Layout";
 import { Suspense, lazy } from "react";
 import { Loader } from "./Loader/Loader";
@@ -27,7 +26,6 @@ function App() {
           </Route>
         </Routes>
       </Suspense>
-      <ToastContainer />
     </>
   );
 }
