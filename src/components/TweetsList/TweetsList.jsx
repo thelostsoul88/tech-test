@@ -83,7 +83,7 @@ export const TweetsList = () => {
         </div>
       </div>
       <div className="mb-10">
-        <ul className="flex justify-center flex-wrap gap-12 mt-10">
+        <ul className="flex justify-center flex-wrap gap-12 mt-24">
           {filteredFollowers.map((users) => (
             <TweetsCard key={users.id} users={users} />
           ))}
