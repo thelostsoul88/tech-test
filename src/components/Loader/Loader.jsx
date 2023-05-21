@@ -8,7 +8,15 @@ export const Loader = () => {
       open={true}
     >
       <Box sx={{ display: "flex" }}>
-        <div className="spinner"></div>
+        {/* <div className="spinner"></div> */}
+        <div className="wrapper">
+          <div className="circle"></div>
+          <div className="circle"></div>
+          <div className="circle"></div>
+          <div className="shadow"></div>
+          <div className="shadow"></div>
+          <div className="shadow"></div>
+        </div>
       </Box>
     </Backdrop>
   );
